@@ -1,4 +1,4 @@
-package dev.javaAPI01.Cadastro01;
+package dev.javaAPI01.Cadastro01.Pessoas;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

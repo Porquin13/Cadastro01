@@ -1,8 +1,10 @@
-package dev.javaAPI01.Cadastro01;
+package dev.javaAPI01.Cadastro01.Pessoas;
 
 
-import com.fasterxml.jackson.annotation.JsonTypeId;
+import dev.javaAPI01.Cadastro01.Mangas.MangasModel;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity //Transforma em entidade banco de dados
 @Table(name = "tb_cadastro01")
@@ -11,9 +13,18 @@ public class PessoaModel {
     @Id // gerar ids automaticamente
     @GeneratedValue(strategy = GenerationType.IDENTITY) // gera valores em ordem crescente
     private Long id;
+
     private String nome;
+
     private String email;
+
     private int idade;
+
+    // @ManyToOne muitos leitores para um manga
+    @ManyToOne
+    @JoinColumn(name = "mangas_id") //Chave estrangeria
+    private MangasModel manga;
+
 
     public PessoaModel() {
     }
